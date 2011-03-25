@@ -51,7 +51,7 @@ abstract class sfDoctrineRecord extends Doctrine_Record
    */
   static public function listenToChangeCultureEvent(sfEvent $event)
   {
-    self::$_defaultCulture = $event['culture'];
+    self::$_defaultCulture = substr($event['culture'], 0, 2);
   }
 
   /**
